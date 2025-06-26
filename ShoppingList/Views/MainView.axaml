@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ShoppingList.ViewModels"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ShoppingList.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -11,10 +12,26 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
-    <DockPanel>
-        <TextBlock DockPanel.Dock="Bottom" Text="{Binding Greeting}" HorizontalAlignment="Center"
-                   VerticalAlignment="Center" />
-        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-
-    </DockPanel>
+    <Grid Margin="5">
+        <DockPanel>
+            <!--Text-->
+            <TextBlock DockPanel.Dock="Bottom" Text="{Binding StatusText}" HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+            <Grid Margin="5" DockPanel.Dock="Top" ColumnDefinitions="*,*">
+                <Button Grid.Column="1" HorizontalAlignment="Right">
+                    <materialIcons:MaterialIcon Kind="Plus" Width="32" Height="32"/>
+                </Button>
+            </Grid>
+            <ListBox ItemsSource="{Binding ListEntries}" SelectionMode="Single">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2" ColumnDefinitions="50,*">
+                            <CheckBox Grid.Column="0" VerticalAlignment="Center" IsEnabled="{Binding IsFinished}"/>
+                            <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding Name}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </Grid>
 </UserControl>
