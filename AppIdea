@@ -1,0 +1,22 @@
+AppIdea
+Einkaufsliste App mit BarCode Scanner Funktion
+https://openfoodfacts.github.io/openfoodfacts-server/api/tutorial-off-api/
+Am Besten mit Avalonia oder Blazor/Maui Combo
+
+Eine einkaufsliste App, bei der man Elemente abhacken kann, aber auch anlegen kann. Man kann auch einen QR/BarCode scannen und jeder QR Code wird einer Produktkategorie zugeordnet, welcher dann abstrakt in der Einkaufsliste dargestellt wird. (Damit man nicht den exakt gleichen Artikel kaufen muss.)
+Mehrere Listen für mehrere WG Mitglieder, wo jeder selbst was eintragen kann, aber auch Dinge makieren kann, die andere Einkaufen dürfen, so dass man am Ende eine Einkaufsliste anzeigen kann für den aktuellen einkaufsliste
+Vielleicht eine Reihenfolge abhängig vom Supermarkt, damit man nicht hin und her laufen muss (vielleicht kann man anhand der Produktkategorien der Produkte diese den Kategorien im Supermarkt zuordnen)
+Vielleicht kann man beim hinzufügen nach dem barcode scannen bei allen Felder den ausgegrauten Hintergrundtext mit dem gescannten befüllen und dann bei den Felder, die leer sind davon übernehmend
+Vielleicht in der liste die Möglichkeit haben ein bestimmtes Item zu analysieren und mit anderen gleichwertige Produkten abspeichern
+Am Besten mit server, wo gespeichert wird wie die einkaufliste aussieht, damit man sie mit anderen WG Mitgliedern vergleichen kann.
+Vielleicht eine Liste mit bisher gescannten Items abspeicherbar und per Suchfunktion schnell auffindbar
+Vielleicht items mit BarCode abspeichern (nur lokal/auf eigener db) um zu viele API Requests zu verhindern und damit auch ohne Internet auflistbar
+
+Feature List:
+- Liste mit abhacken
+- Neues Item hinzufügen
+-- Manuell
+-- Mit Barcode
+--- Nach dem Barcode scannen alle möglichen Felder mit ausgegrauten Daten hinterlegen (also leer aber der Text dahinter, dann kann man manuell eintragen und leere Felder nehmen den Scan)
+- Liste leeren (mit Bestätigung)
+- Filtern (Alle/Abgehakte/Nicht abgehackte)
